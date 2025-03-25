@@ -1,0 +1,612 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* HEADER SECTION STARTS */
+.center {
+	text-align: center;
+}
+
+.nav-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: auto;
+	width: 90%;
+	height: 80px;
+	border-radius: 0 0 15px 15px;
+	padding: 0 25px;
+	z-index: 2;
+	background: #005baa;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.nav-tabs {
+	display: flex;
+	font-weight: 600;
+	font-size: 18px;
+	list-style: none;
+}
+
+.nav-tab:not(:last-child) {
+	padding: 10px 25px;
+	margin: 0;
+	/* border-right: 1px solid #eee; */
+}
+
+.nav-tab:last-child {
+	padding: 10px 0 0 25px;
+}
+
+.nav-tab,
+.menu-btn {
+	cursor: pointer;
+  color: white;
+}
+
+.nav-tab a {
+    color: white; /* Makes the text white */
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: none; /* Removes the underline from links */
+}
+
+.nav-tab a:hover {
+    text-decoration: underline; /* Adds an underline when hovered over */
+}
+
+
+.hidden {
+	display: none;
+}
+
+@media screen and (max-width: 1107px) {
+	.nav-container {
+		position: fixed;
+		display: none;
+		overflow-y: auto;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		width: 280px;
+		height: 100%;
+		background: #fff;
+		box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.nav-tabs {
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: 80px;
+		width: 100%;
+	}
+
+	.nav-tab:not(:last-child) {
+		padding: 20px 25px;
+		margin: 0;
+		border-right: unset;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	.nav-tab:last-child {
+		padding: 15px 25px;
+	}
+
+	.menu-btn {
+		position: relative;
+		display: block;
+		margin: 0;
+		width: 20px;
+		height: 15px;
+		cursor: pointer;
+		z-index: 2;
+		padding: 10px;
+		border-radius: 10px;
+	}
+
+	.menu-btn .menu {
+		display: block;
+		width: 100%;
+		height: 2px;
+		border-radius: 2px;
+		background: #111;
+	}
+
+	.menu-btn .menu:nth-child(2) {
+		margin-top: 4px;
+		opacity: 1;
+	}
+
+	.menu-btn .menu:nth-child(3) {
+		margin-top: 4px;
+	}
+
+	#menuToggle:checked + .menu-btn .menu {
+		transition: transform 0.2s ease;
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(1) {
+		transform: translate3d(0, 6px, 0) rotate(45deg);
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(2) {
+		transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+		opacity: 0;
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(3) {
+		transform: translate3d(0, -6px, 0) rotate(-45deg);
+	}
+
+	#menuToggle:checked ~ .nav-container {
+		z-index: 1;
+		display: flex;
+		animation: menu-slide-left 0.3s ease;
+	}
+	@keyframes menu-slide-left {
+		0% {
+			transform: translateX(200px);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+}
+
+/* HEADER SECTION ENDS */
+
+main {
+  position: relative;
+  width: calc(min(90rem, 90%));
+  margin: 0 auto;
+  min-height: 82.2vh;
+  column-gap: 3rem;
+    
+
+ 
+}
+
+.bg {
+  position: fixed;
+  top: -4rem;
+  left: -12rem;
+  z-index: -1;
+  opacity: 0;
+}
+
+.bg2 {
+  position: fixed;
+  bottom: -2rem;
+  right: -3rem;
+  z-index: -1;
+  width: 9.375rem;
+  opacity: 0;
+}
+
+main > div span {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  color: #717171;
+}
+
+main > div h1 {
+  text-transform: capitalize;
+  letter-spacing: 0.8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
+  background-color: #005baa;
+  background-image: linear-gradient(45deg, #005baa, #000000);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+main > div hr {
+  display: block;
+  background: #005baa;
+  height: 0.25rem;
+  width: 6.25rem;
+  border: none;
+  margin: 1.125rem 0 1.875rem 0;
+}
+
+main > div p {
+  line-height: 1.6;
+}
+
+main a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 3.125rem;
+  transition: 0.3s ease-in-out;
+}
+
+main > div > a {
+  border: 2px solid #c2c2c2;
+  margin-top: 2.188rem;
+  padding: 0.625rem 1.875rem;
+}
+
+main > div > a:hover {
+  border: 0.125rem solid #005baa;
+  color: #005baa;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 3.125rem;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.swiper-pagination {
+  bottom: 1.25rem !important;
+}
+
+.swiper-slide {
+  width: 18.75rem;
+  height: 28.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: self-start;
+}
+
+.swiper-slide h2 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 0.625rem;
+  padding: 0 0 0 1.563rem;
+  text-transform: uppercase;
+}
+
+.swiper-slide p {
+  color: #dadada;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 0 1.563rem;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.swiper-slide a {
+  margin: 1.25rem 1.563rem 3.438rem 1.563rem;
+  padding: 0.438em 1.875rem;
+  font-size: 0.9rem;
+}
+
+.swiper-slide a:hover {
+  color: #005baa;
+}
+
+.swiper-slide div {
+  display: none;
+  opacity: 0;
+  padding-bottom: 0.625rem;
+}
+
+.swiper-slide-active div {
+  display: block;
+  opacity: 1;
+}
+
+.swiper-slide--one {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://images.unsplash.com/photo-1628944682084-831f35256163?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--two {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://images.unsplash.com/photo-1515309025403-4b0184873cef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--three {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--four {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat 50% 50%/cover;
+}
+
+.swiper-slide--five {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://images.unsplash.com/photo-1570481662006-a3a1374699e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80") no-repeat 50% 50%/cover;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+@media screen and (min-width: 48rem) {
+  main {
+    display: flex;
+    align-items: center;
+
+	
+  }
+
+  .bg,
+.bg2 {
+    opacity: 0.1;
+  }
+}
+@media screen and (min-width: 93.75rem) {
+  .swiper {
+    width: 85%;
+  }
+}
+
+/* FOOTER SECTION STARTS */
+footer {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 90%;
+	height: 80px;
+	border-radius: 15px 15px 0px 0px;
+	padding: 0 25px;
+	z-index: 2;
+	background: #005baa;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+footer .footer-tg{
+  color: white;
+}
+
+#featured-products {
+    display: flex;
+    flex-direction: column; /* Stacks product boxes vertically */
+    gap: 20px; /* Adds spacing between product boxes */
+    align-items: center;
+    width: 100%;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: row; /* Places image and details side by side */
+    align-items: center;
+    gap: 20px; /* Adds space between image and details */
+    padding: 15px;
+    background-color: #f0f8ff; /* Soft aquatic blue background */
+    border-radius: 10px; /* Rounds the edges of the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    width: 80%; /* Adjusts box width */
+    max-width: 900px; /* Optional: limits the maximum width */
+}
+
+.product-image {
+    width: 200px; /* Sets the image size */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounds the image edges */
+}
+
+.product-details {
+    flex: 1; /* Makes the text container take the remaining space */
+}
+
+.product-details h3 {
+    font-size: 1.5rem;
+    color: #005baa; /* Aquatic theme color */
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+#featured-services {
+    display: flex;
+    flex-direction: column; /* Stacks service boxes vertically */
+    gap: 20px; /* Adds spacing between service boxes */
+    align-items: center;
+    width: 100%;
+}
+
+.service-box {
+    display: flex;
+    flex-direction: row; /* Places image and details side by side */
+    align-items: center;
+    gap: 20px; /* Adds space between image and details */
+    padding: 15px;
+    background-color: #eaf7ff; /* Light blue for a refreshing service theme */
+    border-radius: 10px; /* Rounded edges for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    width: 80%; /* Adjusts box width */
+    max-width: 900px; /* Optional: limits the maximum width */
+}
+
+.service-image {
+    width: 200px; /* Sets the image size */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounds the image edges */
+}
+
+.service-details {
+    flex: 1; /* Makes the text container take the remaining space */
+}
+
+.service-details h3 {
+    font-size: 1.5rem;
+    color: #004a8f; /* A darker aquatic blue for titles */
+    margin-bottom: 10px;
+}
+
+.service-details p {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+/* Contact Us Section */
+#contact-us {
+    background-color: #f0f8ff; /* Light blue background for the contact section */
+    padding: 40px 20px; /* Adds spacing around the section */
+    text-align: center; /* Centers the text and content */
+}
+
+#contact-us h2 {
+    font-size: 2rem;
+    color: #005baa; /* Aquatic blue theme for the title */
+    margin-bottom: 30px; /* Adds space below the title */
+}
+
+#contact-us p {
+    font-size: 1.2rem;
+    color: #333; /* Neutral color for text */
+    margin-bottom: 30px; /* Adds space below the description */
+}
+
+#contact-us form {
+    max-width: 600px; /* Limits the form width */
+    margin: 0 auto; /* Centers the form */
+    background-color: #ffffff; /* White form background */
+    padding: 20px; /* Internal padding for the form */
+    border-radius: 10px; /* Rounds the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+	text-align: left;
+	font-weight: bold ;
+}
+
+#contact-us form div {
+    margin-bottom: 15px; /* Space between input fields */
+}
+
+#contact-us form label {
+    display: block; /* Stacks labels above inputs */
+    font-size: 1rem;
+    color: #333; /* Neutral label color */
+    margin-bottom: 5px; /* Space below the label */
+}
+
+#contact-us form input,
+#contact-us form textarea {
+    width: 100%; /* Takes up full width of the form */
+    padding: 10px; /* Adds internal padding for usability */
+    border: 1px solid #ccc; /* Neutral border */
+    border-radius: 5px; /* Rounds input edges */
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+#contact-us form textarea {
+    resize: vertical; /* Allows vertical resizing only */
+}
+
+#contact-us form button {
+    display: block;
+    width: 100%; /* Full-width button */
+    background-color: #005baa; /* Aquatic blue background */
+    color: white; /* White button text */
+    padding: 10px 20px; /* Spacing for the button */
+    font-size: 1rem;
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds button edges */
+    cursor: pointer; /* Indicates interactivity */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+#contact-us form button:hover {
+    background-color: #003f7d; /* Darker blue on hover */
+}
+
+
+/* Careers Section */
+#careers {
+    background-color: #f0f8ff; /* Light aquatic blue background */
+    padding: 40px 20px; /* Adds spacing around the section */
+    text-align: center; /* Centers the headings and intro */
+}
+
+#careers h2 {
+    font-size: 2rem;
+    color: #005baa; /* Aquatic theme color */
+    margin-bottom: 20px;
+}
+
+.careers-intro {
+    font-size: 1.2rem;
+    color: #333; /* Neutral color for the intro paragraph */
+    margin-bottom: 40px;
+}
+
+.career-box {
+    background-color: #ffffff; /* White background for career boxes */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded edges for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    text-align: left; /* Aligns text to the left */
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 20px; /* Centers the box and adds spacing */
+}
+
+.career-box h3 {
+    font-size: 1.5rem;
+    color: #004a8f; /* A darker blue for job titles */
+    margin-bottom: 10px;
+}
+
+.career-box p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.apply-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #005baa; /* Button background */
+    color: #ffffff; /* Button text color */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded edges for the button */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.apply-btn:hover {
+    background-color: #003f7d; /* Darker blue on hover */
+}
